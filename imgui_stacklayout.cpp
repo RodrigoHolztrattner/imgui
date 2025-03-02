@@ -667,7 +667,7 @@ static void ImGui::PopLayout(ImGuiLayout* layout)
     if (!window_state->LayoutStack.empty())
     {
         window_state->CurrentLayout = window_state->LayoutStack.back();
-        window_state->CurrentLayoutItem = &window_state->CurrentLayout->Items[window_state->CurrentLayout->CurrentItemIndex];
+        window_state->CurrentLayoutItem = window_state->CurrentLayout ? &window_state->CurrentLayout->Items[window_state->CurrentLayout->CurrentItemIndex] : NULL;
     }
     else
     {
